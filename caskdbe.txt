@@ -1,0 +1,18 @@
+$ telnet localhost 6379
+Trying ::1...
+Connected to localhost.
+Escape character is '^]'.
+SET foo bar
++OK
+GET foo
+$3
+bar
+DEL foo
+:1
+GET foo
+$-1
+PING
++PONG
+QUIT
++OK
+Connection closed by foreign host.

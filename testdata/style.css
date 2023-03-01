@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+}
+:root{
+    --bg-color: #091524;
+}
+
+html, body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: var(--bg-color);
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+fieldset, legend, button {
+    border: 0;
+}
+ul li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: rgb(173, 39, 113);
+}
+
+.menu--items {
+    border: 1px solid white;
+    display: flex;
+    justify-content: space-evenly;
+}
+.site--creator {
+    display: flex;
+    flex-direction: column;
+    background-color: #091524;
+}

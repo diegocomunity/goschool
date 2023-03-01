@@ -1,0 +1,1 @@
+ content := container.New(layout.NewGridLayout(2), text1, text2)

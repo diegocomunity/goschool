@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fluent</title>
+    <script type="module" src="web-components.min.js""></script>
+
+    <style>
+        body {
+  padding: 1em;
+  font-family: sans-serif;
+}
+        fluent-card {
+  width: 120px;
+  height: 200px;
+  padding: 12px;
+}
+
+fluent-horizontal-scroll {
+  max-width: 620px;
+}
+    </style>
+</head>
+
+<body>
+  <div class="ms-Grid-col ms-sm12 ms-hiddenXxlUp">Visible on smaller screens</div>
+<div class="ms-Grid-col ms-sm12 ms-hiddenXlDown">Visible on larger screens</div>
+
+On this page
+
+    Breakpoints
+    Grid
+    Implementation
+  <div class="ms-bgColor-gray10">
+    <fluent-button>CLICKEAME</fluent-button>
+  </div>
+    <div>
+        <fluent-radio-group orientation="vertical">
+            <div>
+                <fluent-radio>18-24</fluent-radio>
+
+            </div>
+            <fluent-radio>25-33</fluent-radio>
+            <fluent-radio>34-44</fluent-radio>
+            <fluent-radio>45+</fluent-radio>
+          </fluent-radio-group>
+    </div>
+    <div>
+        <fluent-select title="Select a section">
+            <fluent-option value="1">Beginning</fluent-option>
+            <fluent-option value="2">Middle</fluent-option>
+            <fluent-option value="3">End</fluent-option>
+          </fluent-select>
+    </div>
+    <div>
+        <fluent-number-field value="0">Number: </fluent-number-field>
+    </div>
+    <div>
+        <fluent-menu>
+            <fluent-menu-item>Undo</fluent-menu-item>
+            <fluent-menu-item>Redo</fluent-menu-item>
+            <fluent-divider></fluent-divider>
+            <fluent-menu-item role="menuitemcheckbox">Extensions</fluent-menu-item>
+            <fluent-menu-item role="menuitemcheckbox">Add ons</fluent-menu-item>
+            <fluent-divider></fluent-divider>
+            <fluent-menu-item role="menuitemradio">Start</fluent-menu-item>
+            <fluent-menu-item role="menuitemradio">End</fluent-menu-item>
+          </fluent-menu>
+    </div>
+    <fluent-card class="custom">
+        Custom size using CSS
+    </fluent-card>
+    <div>
+        <fluent-tabs activeid="entrees">
+            <fluent-tab id="apps">Appetizers</fluent-tab>
+            <fluent-tab id="entrees">Entrees</fluent-tab>
+            <fluent-tab id="desserts">Desserts</fluent-tab>
+            <fluent-tab-panel id="appsPanel">
+                <ol>
+                    <li><fluent-anchor href="#" appearance="hypertext">Stuffed artichokes</fluent-anchor></li>
+                    <li><fluent-anchor href="#" appearance="hypertext">Bruschetta</fluent-anchor></li>
+                    <li><fluent-anchor href="#" appearance="hypertext">Oven-baked polenta</fluent-anchor></li>
+                    <li><fluent-anchor href="#" appearance="hypertext">Salami and Fig Crostini with Ricotta</fluent-anchor></li>
+                    <li><fluent-anchor href="#" appearance="hypertext">Rosemary-Potato Focaccia with Goat Cheese</fluent-anchor></li>
+                </ol>
+            </fluent-tab-panel>
+            <fluent-tab-panel id="entreesPanel">
+                <ol>
+                    <li><fluent-anchor href="#" appearance="hypertext">Mushroom-Sausage Ragù</fluent-anchor></li>
+                    <li><fluent-anchor href="#" appearance="hypertext">Tomato Bread Soup with Steamed Mussels</fluent-anchor></li>
+                    <li><fluent-anchor href="#" appearance="hypertext">Grilled Fish with Artichoke Caponata</-anchor></li>
+                    <li><fluent-anchor href="#" appearance="hypertext">Celery Root and Mushroom Lasagna</fluent-anchor></li>
+                    <li><fluent-anchor href="#" appearance="hypertext">Osso Buco with Citrus Gremolata</fluent-anchor></li>
+                </ol>
+            </fluent-tab-panel>
+            <fluent-tab-panel id="dessertsPanel">
+                <ol>
+                    <li><fluent-anchor href="#" appearance="hypertext">Tiramisu</fluent-anchor></li>
+                    <li><fluent-anchor href="#" appearance="hypertext">Spumoni</fluent-anchor></li>
+                    <li><fluent-anchor href="#" appearance="hypertext">Limoncello and Ice Cream with Biscotti</fluent-anchor></li>
+                </ol>
+            </fluent-tab-panel>
+        </fluent-tabs>
+    </div>
+
+    <fluent-slider min="0" max="100" value="50" step="5" style="max-width: 300px;" title="Set the temperature">
+        <fluent-slider-label>
+          0&#8451;
+        </fluent-slider-label>
+        <fluent-slider-label position="25">
+          25&#8451;
+        </fluent-slider-label>
+        <fluent-slider-label position="50">
+          50;
+        </fluent-slider-label>
+        <fluent-slider-label position="75">
+          75&#8451;
+        </fluent-slider-label>
+        <fluent-slider-label position="100">
+          100&#8451;
+        </fluent-slider-label>
+      </fluent-slider>
+      <fluent-checkbox>Did you check this?</fluent-checkbox><br />
+<fluent-checkbox checked disabled>Is this disabled?</fluent-checkbox><br />
+<fluent-checkbox checked>Checked by default?</fluent-checkbox>
+<fluent-switch>
+    <span slot="checked-message">On</span>
+    <span slot="unchecked-message">Off</span>
+    <label for="cap-switch">Captions:</label>
+  </fluent-switch>
+  <fluent-text-area placeholder="Describe your experience">How was your stay?</fluent-text-area>
+  <fluent-text-field appearance="outline" placeholder="user@email.com">Email</fluent-text-field>
+  <div>
+    <fluent-button id="anchor">Hover me</fluent-button>
+    <fluent-tooltip anchor="anchor">Tooltip text</fluent-tooltip>
+</div>
+<div>
+    <fluent-tree-view>
+        Root
+        <fluent-tree-item>
+          Fruit
+          <fluent-tree-item>Pear</fluent-tree-item>
+          <fluent-tree-item>Mango</fluent-tree-item>
+          <fluent-tree-item>Guava</fluent-tree-item>
+          <fluent-tree-item>Pomegranate</fluent-tree-item>
+        </fluent-tree-item>
+        <fluent-tree-item>
+          Guitars
+          <fluent-tree-item>Fender</fluent-tree-item>
+          <fluent-tree-item>Gibson</fluent-tree-item>
+          <fluent-tree-item>Teisco</fluent-tree-item>
+          <fluent-tree-item>Martin</fluent-tree-item>
+        </fluent-tree-item>
+        <fluent-tree-item>Earth</fluent-tree-item>
+    </fluent-tree-view>
+</div>
+<div>
+    Before the divider
+<fluent-divider></fluent-divider>
+After the divider
+</div>
+<div>
+    <fluent-progress value="64"></fluent-progress>
+</div>
+<div>
+    <fluent-badge appearance="accent">New</fluent-badge>
+</div>
+<div>
+    <fluent-slider min="0" max="100" value="50" step="5" style="max-width: 300px;" title="Set the temperature">
+        <fluent-slider-label>
+          0&#8451;
+        </fluent-slider-label>
+        <fluent-slider-label position="25">
+          25&#8451;
+        </fluent-slider-label>
+        <fluent-slider-label position="50">
+          50&#8451;
+        </fluent-slider-label>
+        <fluent-slider-label position="75">
+          75&#8451;
+        </fluent-slider-label>
+        <fluent-slider-label position="100">
+          100&#8451;
+        </fluent-slider-label>
+      </fluent-slider>
+</div>
+<div>
+    <fluent-horizontal-scroll>
+        <fluent-card>
+          Card 1
+        </fluent-card>
+        <fluent-card>
+          Card 2
+        </fluent-card>
+        <fluent-card>
+          Card 3
+        </fluent-card>
+        <fluent-card>
+          Card 4
+        </fluent-card>
+        <fluent-card>
+          Card 5
+        </fluent-card>
+        <fluent-card>
+          Card 6
+        </fluent-card>
+        <fluent-card>
+          Card 7
+        </fluent-card>
+        <fluent-card>
+          Card 8
+        </fluent-card>
+        <fluent-card>
+          Card 9
+        </fluent-card>
+        <fluent-card>
+          Card 10
+        </fluent-card>
+        <fluent-card>
+          Card 11
+        </fluent-card>
+        <fluent-card>
+          Card 12
+        </fluent-card>
+        <fluent-card>
+          Card 13
+        </fluent-card>
+        <fluent-card>
+          Card 14
+        </fluent-card>
+        <fluent-card>
+          Card 15
+        </fluent-card>
+        <fluent-card>
+          Card 16
+        </fluent-card>
+      </fluent-horizontal-scroll>
+</div>
+<div>
+    <fluent-progress-ring></fluent-progress-ring>
+</div>
+<div>
+    <fluent-flipper></fluent-flipper>
+</div>
+<div>
+    <fluent-skeleton style="height: 50px; width: 250px" shape="rect" shimmer="false"></fluent-skeleton>
+</div>
+</body>
+</html>

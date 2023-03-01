@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web components</title>
+    <link type="text/css" rel="stylesheet" href="lib/css/materialize.min.css"  media="screen,projection"/>
+    <script src="./lib/materialize.min.js"></script>
+    <script type="module" src="./lib/web-components.min.js"></script>
+</head>
+<body>
+    <main>
+        <section class="builder">
+            <div class="builder-header">
+                <h1>Build website</h1>
+            </div>
+            <div>
+                <fluent-tabs activeid="code">
+                    <fluent-tab id="config">Config</fluent-tab>
+                    <fluent-tab id="code">Codigo</fluent-tab>
+                    <fluent-tab-panel id="configPanel">
+                        <ol>
+                            <li><fluent-anchor href="#" appearance="hypertext">Stuffed artichokes</fluent-anchor></li>
+                            <li><fluent-anchor href="#" appearance="hypertext">Bruschetta</fluent-anchor></li>
+                            <li><fluent-anchor href="#" appearance="hypertext">Oven-baked polenta</fluent-anchor></li>
+                            <li><fluent-anchor href="#" appearance="hypertext">Salami and Fig Crostini with Ricotta</fluent-anchor></li>
+                            <li><fluent-anchor href="#" appearance="hypertext">Rosemary-Potato Focaccia with Goat Cheese</fluent-anchor></li>
+                        </ol>
+                    </fluent-tab-panel>
+                    <fluent-tab-panel id="codePanel">
+                        <fluent-text-area placeholder="Your code" id="codeText">Code</fluent-text-area>
+                        <div>
+                            <fluent-button appearance="accent" id="runButton">RUN</fluent-button>
+                        </div>
+                    </fluent-tab-panel>
+                </fluent-tabs>
+            </div>
+        </section>
+    </main>
+    <script>
+        var onRun = function(e){
+            e.preventDefault();
+            const body = new FormData();
+            body.set("code", document.getElementById('codeText').textContent);
+            alert(body.get("code"))
+        }
+        document.getElementById('runButton').addEventListener('click', onRun);
+    </script>
+</body>
+</html>

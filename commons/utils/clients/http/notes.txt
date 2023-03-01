@@ -1,0 +1,65 @@
+package main
+
+import (
+	"bufio"
+	"bytes"
+	"fmt"
+	"log"
+	"net/http"
+	"sync"
+)
+
+//el servidor està en el ejemplo
+
+// usando el paquete sync ExampleHttp_Sync
+
+type httpPkg struct{}
+
+var httpP httpPkg
+
+func (httpPkg) Get(url string) {
+	res, err := http.Get(url)
+	if err != nil {
+		log.Fatalf(err.Error())
+	}
+	if res.Status == "200 OK" {
+		var s = bufio.NewScanner(res.Body)
+		for s.Scan() {
+			println(s.Text())
+		}
+		if err := s.Err(); err != nil {
+			log.Fatalf(err.Error())
+		}
+	}
+}
+
+func RunExample() {
+	var wg sync.WaitGroup
+	var urls = []string{
+		"http://localhost:8080/",
+		"http://localhost:8080/foo",
+		"http://localhost:8080/bar",
+		"http://localhost:8080/say",
+		"http://localhost:8080/fobar",
+	}
+	for _, url := range urls {
+		wg.Add(1)
+		go func(url string) {
+			httpP.Get(url)
+			defer wg.Done()
+		}(url)
+	}
+	wg.Wait()
+}
+
+func main() {
+	//var g = httpPkg{}
+	//g.Get("http://localhost:8080/")
+	body := bytes.NewBuffer([]byte("MAXIMIXAR"))
+	req, err := http.NewRequest("POST", "http://localhost:8080/", body)
+	if err != nil {
+		log.Fatalf(err.Error())
+	}
+	fmt.Println("req: ", req)
+
+}

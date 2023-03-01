@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <style>
+        html,body {background-color: #333;}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <ul class="menu">
+                <li class="menu--item"><a href="/">Home</a></li>
+                <li class="menu--item"><a href="/web/comments">Comments</a></li>
+                <li class="menu--item"><a href="/new">New Item</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="container">
+            <strong>WELCOME <span>{{.Nick}}</span> con el msg: {{.Message}}</strong>
+        </div>
+        <form id="comment">
+            <fieldset title="comment form">
+                <legend>Comment form</legend>
+            </fieldset>
+            <label for="lblNick">
+                Nick
+                <input type="text" name="nick">
+            </label>
+            <label for="lblMessage">
+                Message 
+                <input type="text" name="message">
+            </label>
+            <input type="submit">
+        </form>
+    </main>
+    <script>
+        const comment = document.getElementById('comment');
+        comment.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let data = new FormData(document.getElementById('comment'));
+            fetch('/', {
+                method: 'POST',
+                body: data
+            }).then(res => res.text())
+            .then(res => {
+                console.log(res)
+            }).catch(err => console.error(err))
+        })
+    </script>
+</body>
+</html>

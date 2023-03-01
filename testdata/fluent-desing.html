@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="module" src="web-components.min.js"></script>
+  </head>
+  <!-- ... -->
+  <fluent-text-field appearance="outline" placeholder="user@email.com">Email</fluent-text-field>
+
+  <fluent-tabs activeid="entrees">
+    <fluent-tab id="apps">Appetizers</fluent-tab>
+    <fluent-tab id="entrees">Entrees</fluent-tab>
+    <fluent-tab id="desserts">Desserts</fluent-tab>
+    <fluent-tab-panel id="appsPanel">
+        <ol>
+            <li><fluent-anchor href="#" appearance="hypertext">Stuffed artichokes</fluent-anchor></li>
+            <li><fluent-anchor href="#" appearance="hypertext">Bruschetta</fluent-anchor></li>
+            <li><fluent-anchor href="#" appearance="hypertext">Oven-baked polenta</fluent-anchor></li>
+            <li><fluent-anchor href="#" appearance="hypertext">Salami and Fig Crostini with Ricotta</fluent-anchor></li>
+            <li><fluent-anchor href="#" appearance="hypertext">Rosemary-Potato Focaccia with Goat Cheese</fluent-anchor></li>
+        </ol>
+    </fluent-tab-panel>
+    <fluent-tab-panel id="entreesPanel">
+        <ol>
+            <li><fluent-anchor href="#" appearance="hypertext">Mushroom-Sausage Ragù</fluent-anchor></li>
+            <li><fluent-anchor href="#" appearance="hypertext">Tomato Bread Soup with Steamed Mussels</fluent-anchor></li>
+            <li><fluent-anchor href="#" appearance="hypertext">Grilled Fish with Artichoke Caponata</-anchor></li>
+            <li><fluent-anchor href="#" appearance="hypertext">Celery Root and Mushroom Lasagna</fluent-anchor></li>
+            <li><fluent-anchor href="#" appearance="hypertext">Osso Buco with Citrus Gremolata</fluent-anchor></li>
+        </ol>
+    </fluent-tab-panel>
+    <fluent-tab-panel id="dessertsPanel">
+        <ol>
+            <li><fluent-anchor href="#" appearance="hypertext">Tiramisu</fluent-anchor></li>
+            <li><fluent-anchor href="#" appearance="hypertext">Spumoni</fluent-anchor></li>
+            <li><fluent-anchor href="#" appearance="hypertext">Limoncello and Ice Cream with Biscotti</fluent-anchor></li>
+        </ol>
+    </fluent-tab-panel>
+</fluent-tabs>
+<fluent-progress value="64"></fluent-progress>
+<fluent-button>Hello world</fluent-button>
+
+<h4>Multi-expand</h4>
+<fluent-accordion style="max-width: 350px;">
+  <fluent-accordion-item>
+    <span slot="heading">Item 1</span>
+    <div class="panel">
+      Panel one content
+    </div>
+  </fluent-accordion-item>
+  <fluent-accordion-item>
+    <span slot="heading">Item 2</span>
+    <div class="panel">
+      Panel 2 content
+    </div>
+  </fluent-accordion-item>
+  <fluent-accordion-item>
+    <span slot="heading">Item 3</span>
+    <div class="panel">
+      Panel 3 content
+    </div>
+  </fluent-accordion-item>
+</fluent-accordion>
+<h4>Single-expand</h4>
+<fluent-accordion expand-mode="single">
+  <fluent-accordion-item>
+    <span slot="heading">Item 1</span>
+    <div class="panel">
+      Panel one content
+    </div>
+  </fluent-accordion-item>
+  <fluent-accordion-item>
+    <span slot="heading">Item 2</span>
+    <div class="panel">
+      Panel 2 content
+    </div>
+  </fluent-accordion-item>
+  <fluent-accordion-item>
+    <span slot="heading">Item 3</span>
+    <div class="panel">
+      Panel 3 content
+    </div>
+  </fluent-accordion-item>
+  <fluent-accordion-item>
+    <span slot="heading">Item 4</span>
+    <div class="panel">
+      Panel 4 content
+    </div>
+  </fluent-accordion-item>
+</fluent-accordion>
+<fluent-anchor appearance="">Anchor</fluent-anchor>
+<fluent-button appearance="outline" id="anchor-toggle-positions" style="margin-left: 100px; margin-top: 100px">
+    Anchor</fluent-button>
+  
+  <fluent-anchored-region id="toggle-positions-region" anchor="anchor-toggle-positions" vertical-positioning-mode="locktodefault" vertical-default-position="top" horizontal-positioning-mode="locktodefault" horizontal-default-position="right">
+    <div id="toggle-positions" style="height: 2em; width: 3em; background: #360; padding: 0.3em;"></div>
+  </fluent-anchored-region>
+  <div style="margin-top: 3em; display: flex; flex-direction: row">
+    <button id="toggle-positions-horizontal" style="margin-left: 10px;">
+      toggle horizontal
+    </button>
+    <button id="toggle-positions-vertical">toggle vertical</button>
+    <fluent-badge appearance="accent">New</fluent-badge>
+
+    <fluent-breadcrumb>
+        <fluent-breadcrumb-item href="#">Home</fluent-breadcrumb-item>
+        <fluent-breadcrumb-item href="#">Next Level Down</fluent-breadcrumb-item>
+        <fluent-breadcrumb-item>Current Location</fluent-breadcrumb-item>
+    </fluent-breadcrumb>
+    
+    <fluent-button appearance="accent">Learn more</fluent-button>
+
+    <fluent-card class="custom">
+        Custom size using CSS
+    </fluent-card>
+
+</html>

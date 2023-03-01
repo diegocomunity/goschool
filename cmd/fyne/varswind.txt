@@ -1,0 +1,30 @@
+package main
+
+import (
+	"image/color"
+
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/canvas"
+	"fyne.io/fyne/v2/widget"
+)
+
+const (
+	WIDTH  = 420
+	HEIGHT = 600
+)
+
+func main() {
+	a := app.New()
+	w := a.NewWindow("Hello World")
+	w.Resize(fyne.NewSize(WIDTH, HEIGHT))
+
+	w.SetContent(widget.NewButton("NEW CONFIG", func() {
+		w2 := a.NewWindow("CONF")
+		w2.Resize(fyne.NewSize(350, 500))
+		w2.SetContent(widget.NewCard("WELCOME", "SUB", canvas.NewText("HELLO BRO", color.Black)))
+		w2.Show()
+	}))
+	w.Show()
+	a.Run()
+}
